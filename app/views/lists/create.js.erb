@@ -1,0 +1,3 @@
+$(".step2").before("<%= escape_javascript(render('build', :list => @list)) %>");
+$("#publish").attr('href', '/lists/<%= @list.id %>');
+

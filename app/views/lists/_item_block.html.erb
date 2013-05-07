@@ -1,0 +1,30 @@
+<%= content_tag_for :tr, list_item do %>
+	<td><%= list_item.position %></td>
+	<td>
+		<div class='span6'>
+			<strong><%= venue.name %></strong><br/>
+			<%= venue.address %><br/>
+			(503) 735-5337
+		</div>
+		<br/>
+		<div class='span6'>
+
+		</div>
+	</td>
+	<td>
+		<i class='icon-move dragger'></i>&nbsp;&nbsp;&nbsp;
+			<i class='icon-remove'></i>
+	</td>
+
+<% end %>
+
+<script>
+$('.item_description').keyup(function(e) {
+	console.log("keyhit! ");
+  if(e.which == 13) {
+      $(this).replaceWith(function() {
+			        return $(this).val();
+			    });        
+			}
+});
+</script>

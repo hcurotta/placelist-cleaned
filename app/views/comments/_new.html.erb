@@ -1,0 +1,12 @@
+<div class="span12">
+  <div class="span2"><a href="placelist.php"><%= image_tag "placeholder.png", height:"120", width: "120", class: "img-polaroid" %></a></div>
+  <div class="span10 well">
+  	<%= form_for Comment.new , {:remote => true} do |f| %>
+	    <%= f.text_area :body, class: "span10", rows: 3 %>
+	    <%= f.hidden_field :list_id, value: list.id %>
+	    <p>
+		    <%= f.submit "Add Comment", class: "btn" %>
+		  </p>
+	  <% end %>
+  </div>
+</div>

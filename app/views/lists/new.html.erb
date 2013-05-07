@@ -1,0 +1,68 @@
+<div class="row-fluid">
+  <div class="span12">
+    <div class="row-fluid">
+      <h1>Create a Placelist</h1>
+    </div>
+
+    <!--/row-->
+    <div class="row-fluid"><!--/span-->
+			<div class='step1'>
+      	<div class="span3" id="column_1">
+        	<h3>1. Describe your Placelist</h3>
+        <%= form_for @list, :remote => true do |f| %>
+					<%# f.hidden_field :user_id, {:value => current_user.id} %>
+          <div class="control-group">
+            <label class="control-label" for="inputName">Name your list:</label>
+            <div class="controls">
+							<%= f.text_field :name, placeholder: "Name", :class => "input-xlarge"  %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputPassword">Tell your friend why they should go here:</label>
+            <div class="controls">
+							<%= f.text_area :description, placeholder: "Description", rows:'3', :class => "input-xlarge"  %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Upload Image:</label>
+						<%= image_tag "placeholder.png", class: "img-polaroid", height: 100, width: 100 %>
+            <div class="controls">
+              <input type="file" id="inputTags" placeholder="Tags">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Add tags:</label>
+            <div class="controls">
+              <input type="text" id="inputTags" placeholder="Tags" class="input-xlarge">
+            </div>
+          </div>
+					<%= f.submit 'Add Items',class: 'btn btn-primary btn-large'  %>
+			<% end %>
+			
+			
+			   <h3>3. Invite Collaborators</h3>
+			   <div class="well">
+			     <p>
+			       <button class="btn btn-large" type="button">Add collaborators</button>
+			     </p>
+			   </div>
+			     <!--/.well -->
+			     <h3>4. Publish your Placelist</h3>
+			     <div class="well alert-info">
+			       <p> <%= link_to "Publish", "#", class: "btn btn-primary btn-large", id: 'publish' %> | <a href="#">Cancel</a></p>
+			     </div>
+	      </div>
+	
+				
+			</div>
+		
+		<div class="step2">
+
+ 		</div>
+
+			
+		</div>
+		</div>
+    </div>
+  </div>
+</div>
